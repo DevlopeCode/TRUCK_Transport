@@ -54,9 +54,7 @@ checkdata = () =>{
                  console.log('are'+weigth);
                  tw.innerHTML = `${tewton1}trucks are used of 20TON`;
                  output.innerHTML = `we don't have truck for ${weigth}`;
-                 if(weigth<20){
-                    output.innerHTML = `we don't have truck for 0`;
-                 }
+                
                  if(tewton1==twentyton){
                     weigthlessthantwenty();
                  }
@@ -80,9 +78,7 @@ function weigthlessthanforty(){
                 console.log("you"+weigth);
                 thi.innerHTML = `${thirton1}trucks are used of 30TON`;
                 output.innerHTML = `we don't have truck for ${weigth}`;
-                if(weigth<30){
-                    output.innerHTML = `we don't have truck for 0`;
-                 }
+               
                 if(thirton1==thirtyton){
                     weigthlessthanthirty();
                 }
@@ -108,9 +104,7 @@ function weigthlessthanforty(){
                console.log("doing"+weigth)
              fort.innerHTML =  `${forton1}trucks are used of 40TON`;
              output.innerHTML = `we don't have truck for ${weigth}`;
-             if(weigth<40){
-                output.innerHTML = `we don't have truck for 0`;
-             }
+            
              if(forton1==fourtyton){
                 weigthlessthanforty();
              }
@@ -133,9 +127,7 @@ function weigthlessthanforty(){
                  console.log(weigth);
                  fty.innerHTML = `${fifton1} truck are used for 50TON`;
                  output.innerHTML= `we don't have truck for ${weigth}`;
-                 if(weigth<50){
-                    output.innerHTML = `we don't have truck for 0`;
-                 }
+                 
              if(fifton1==fiftyton){
                 weigthlessthanfifty();
              }
