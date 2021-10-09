@@ -1,140 +1,100 @@
-var tenton,twentyton,thirtyton,fourtyton,fiftyton,weigth,output;
-var fty = document.getElementById('fty');
-var fort = document.getElementById('fort');
-var thi = document.getElementById('thi');
-var tw = document.getElementById('tw');
-var te = document.getElementById('te');
+function checkdata() {
+  var tan_10 = Number(document.getElementById("10_ton").value);
+  var tan_20 = Number(document.getElementById("20_ton").value);
+  var tan_30 = Number(document.getElementById("30_ton").value);
+  var tan_40 = Number(document.getElementById("40_ton").value);
+  var tan_50 = Number(document.getElementById("50_ton").value);
+  var weigth = Number(document.getElementById("weigth").value);
 
-    var fifton1 = 0;
-    var forton1 = 0;
-    var thirton1 = 0;
-    var tewton1 = 0;
-    var tenton1 = 0;
-
-checkdata = () =>{
-
-    tenton = document.getElementById('10_ton').value;
-    twentyton = document.getElementById('20_ton').value;
-    thirtyton = document.getElementById('30_ton').value;
-   fourtyton = document.getElementById('40_ton').value;
-   fiftyton = document.getElementById('50_ton').value;
-   weigth  = document.getElementById('weigth').value;
-    
-   var output=document.querySelector('.output');
- output.innerHTML= " ";
- function weigthlessthantwenty(){
-     if(weigth>=0){
-         while(weigth>=0){
-            weigth =weigth-10;
-             console.log("what"+weigth)
-            ++tenton1;
-             if(tenton1<=tenton){
-                 te.innerHTML = `${tenton1}trucks are used of 10TON`;
-                //  alert("output");
-                 output.innerHTML =  `we don't have truck for ${weigth}`;
-                 if(weigth<0){
-                    output.innerHTML =  `we don't have truck for 0`;
-                 }
-                
-             }   
-            
-         }
-     }
- }
- function weigthlessthanthirty(){
-     if(weigth>=20){
-         while(weigth>=20){
-             if(twentyton==0){
-                weigthlessthantwenty();
-                 break;
-             }
-             weigth=weigth-20;
-             tewton1+=1;
-             if(tewton1<=twentyton){
-                 console.log('are'+weigth);
-                 tw.innerHTML = `${tewton1}trucks are used of 20TON`;
-                 output.innerHTML = `we don't have truck for ${weigth}`;
-                
-                 if(tewton1==twentyton){
-                    weigthlessthantwenty();
-                 }
-             }
-
-         }
-     }else{
-         weigthlessthantwenty();
-     }
- }
-function weigthlessthanforty(){
-    if(weigth>=30){
-        while(weigth>=30){
-            if(thirtyton==0){
-                weigthlessthanthirty();
-                break;
-            }
-            weigth=weigth-30;
-            thirton1+=1;
-            if(thirton1<=thirtyton){
-                console.log("you"+weigth);
-                thi.innerHTML = `${thirton1}trucks are used of 30TON`;
-                output.innerHTML = `we don't have truck for ${weigth}`;
-               
-                if(thirton1==thirtyton){
-                    weigthlessthanthirty();
-                }
-            }
-
+  var tan_50_index = 0;
+  var tan_40_index = 0;
+  var tan_30_index = 0;
+  var tan_20_index = 0;
+  var tan_10_index = 0;
+  var result_50 = document.getElementById('result_50');
+  var result_40 = document.getElementById('result_40');
+  var result_30 = document.getElementById('result_30');
+  var result_20 = document.getElementById('result_20');
+  var result_10 = document.getElementById('result_10');
+  function fun_50() {
+    if (weigth >= 50 || tan_10 + tan_20 + tan_30 + tan_40 == 0) {
+      for (var i = 0; i < tan_50; i++) {
+        if (weigth >= 50 || tan_10 + tan_20 + tan_30 + tan_40 == 0) {
+          tan_50_index++;
+          weigth = weigth - 50;
+        } else {
+          break;
         }
-    }else{
-        weigthlessthanthirty();
-    }
-}
-
- function weigthlessthanfifty(){
-    if(weigth>=40){
-     
-        while(weigth>=40){
-            if(fourtyton==0){
-                weigthlessthanforty();
-                break;
-            }
-           weigth=weigth-40;
-           forton1+=1;
-           if(forton1<=fourtyton){
-               console.log("doing"+weigth)
-             fort.innerHTML =  `${forton1}trucks are used of 40TON`;
-             output.innerHTML = `we don't have truck for ${weigth}`;
-            
-             if(forton1==fourtyton){
-                weigthlessthanforty();
-             }
-           }
-        }
-    }else{
-        weigthlessthanforty();
-    }
-}
-
-      if(weigth>=50){
-         while(weigth>=50){
-             if(fiftyton==0){
-                 weigthlessthanfifty();
-                 break;
-             }
-             weigth = weigth-50;
-             fifton1++;
-             if(fifton1 <= fiftyton){             
-                 console.log(weigth);
-                 fty.innerHTML = `${fifton1} truck are used for 50TON`;
-                 output.innerHTML= `we don't have truck for ${weigth}`;
-                 
-             if(fifton1==fiftyton){
-                weigthlessthanfifty();
-             }
-                } 
-         }
-      }else{
-        weigthlessthanfifty();
       }
- }
+    }
+  }
+  function fun_40() {
+    if (weigth >= 40 || tan_10 + tan_20 + tan_30 == 0) {
+      for (var i = 0; i < tan_40; i++) {
+        if (weigth >= 40 || tan_10 + tan_20 + tan_30 == 0) {
+          tan_40_index++;
+          weigth = weigth - 40;
+        } else {
+          break;
+        }
+      }
+    }
+  }
 
+  function fun_30() {
+    if (weigth >= 30 || tan_10 + tan_20 == 0) {
+      for (var i = 0; i < tan_30; i++) {
+        if (weigth >= 30 || tan_10 + tan_20 == 0) {
+          tan_30_index++;
+          weigth = weigth - 30;
+        } else {
+          break;
+        }
+      }
+    }
+  }
+
+  function fun_20() {
+    if (weigth >= 20 || tan_10 == 0) {
+      for (var i = 0; i < tan_20; i++) {
+        if (weigth >= 20 || tan_10 == 0) {
+          tan_20_index++;
+          weigth = weigth - 20;
+        } else {
+          break;
+        }
+      }
+    }
+  }
+
+  function fun_10() {
+    if (weigth > 0) {
+      for (var i = 0; i < tan_10; i++) {
+        if (weigth > 0) {
+          tan_10_index++;
+          weigth = weigth - 10;
+        } else {
+          break;
+        }
+      }
+    }
+  }
+
+  fun_50();
+  fun_40();
+  fun_30();
+  fun_20();
+  fun_10();
+   result_50.innerHTML=`${tan_50_index} Truck of 50TON`;
+   result_40.innerHTML=`${tan_40_index} Truck of 40TON`;
+   result_30.innerHTML=`${tan_30_index} Truck of 30TON`;
+   result_20.innerHTML=`${tan_20_index} Truck of 20TON`;
+   result_10.innerHTML=`${tan_10_index} Truck of 10TON`;
+  console.log({
+    tan_50_index,
+    tan_40_index,
+    tan_30_index,
+    tan_20_index,
+    tan_10_index
+  });
+}
